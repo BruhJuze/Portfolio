@@ -1,0 +1,139 @@
+@use '../abstract' as a;
+@use '../base' as b;
+@use '../layout/' as l;
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    background-color: a.$bodyNightColor;
+    overflow-x: hidden;
+    @include b.x-large{
+        height:4000px;
+        position: absolute;
+        margin-left: 50%;
+        transform: translateX(-50%); 
+        
+
+    }
+    
+}
+
+.maincontainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%; 
+    @include b.x-large{
+        width: 1920px;
+        
+    }
+
+    .home{
+        display: flex;
+        width: 100%;
+        background-color: a.$elementNightColor;
+        color: white;
+        @include b.x-large{
+        height: 850px; 
+        margin-top:75px;
+        }
+
+        &__image{
+            
+            background-image: url(https://cdn-icons-png.flaticon.com/512/59/59836.png);
+            background-size: 100% 100%;
+            background-color: white;
+            box-sizing: border-box;
+            @include b.x-large{
+            height: 100%;
+            width: 600px;
+            }   
+        }
+
+        &__text{
+            
+            display: flex;
+            flex-direction: column;
+            word-wrap: break-word;
+            padding: 0 100px 0 50px; 
+            width: calc(100% - 600px);
+
+            
+
+            h2{
+            font-size: 50px;
+        }
+            span{
+            font-size: 25px;
+            
+        }
+
+        
+        }
+
+        
+        
+    }
+
+    .hrefBtnContainer{
+        width: 100%;
+        @include b.x-large{
+            height: 150px;
+        }
+
+        &__design{
+            height: 100%;
+            width: 100%;
+            display: flex;
+           background: a.$customColor;
+           align-items: center;
+           justify-content: center;
+
+          .arrow{
+
+            width: 150px;
+            height: 150px;
+            
+            div:nth-child(1){
+            @include b.x-large{
+                transform: translate(10px, 50px) rotate(90deg);
+            }
+        }
+    
+        div:nth-child(2){
+            @include b.x-large{
+                transform: translate(40px, 60px) rotate(-45deg);
+            }
+        }
+    
+        div:nth-child(3){
+            @include b.x-large{
+                transform: translate(-20px, 40px) rotate(45deg);
+            }
+            
+        }
+
+        div{
+            @include b.x-large{
+            height: 20px;
+            width: 100px;
+            background-color: white;
+            border-radius: 20px;  
+            }
+            
+            transition: 300ms ease;
+        }
+            
+          }
+
+        
+
+        }
+    }
+    
+}
+
