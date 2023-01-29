@@ -1,9 +1,22 @@
-$bodyNightColor: rgb(31, 31, 31);
+$bodyNightColor: rgb(20, 20, 20);
 $elementNightColor: rgb(10, 10, 10);
 
-$customColor: linear-gradient(322deg, 
-           #ba4aff, rgba(#ba4aff, 0) 70%),
+$hrefBtnColor: linear-gradient(322deg, 
+           #8eb5ff, rgba(#8eb5ff, 0) 70%),
          linear-gradient(178deg,
            #01447e, rgba(#01447e, 0) 70%),
          linear-gradient(24deg,
-           #37a18a, rgba(#37a18a, 0) 35%);
+           #31917c, rgba(#31917c, 0) 70%);
+
+$hrefBtnColorBottom: linear-gradient(322deg, 
+           #8efff0, rgba(#8efff0, 0) 70%),
+         linear-gradient(178deg,
+           #1a7e01, rgba(#1a7e01, 0) 70%),
+         linear-gradient(24deg,
+           #317691, rgba(#317691, 0) 70%);
+
+$bgGlowColor: linear-gradient(90deg, purple, midnightblue , hotpink);
+
+$test: 0px 33px 25px 0 rgb(18, 194, 97), 
+       0 66px 15px 0px rgb(148, 77, 77),
+       0 99px 5px 0px rgb(56, 150, 145);

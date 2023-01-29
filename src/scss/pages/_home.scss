@@ -9,45 +9,62 @@ html {
 
 body{
     margin: 0;
+    padding: 0;
     background-color: a.$bodyNightColor;
     overflow-x: hidden;
-    @include b.x-large{
-        height:4000px;
-        position: absolute;
-        margin-left: 50%;
-        transform: translateX(-50%); 
-        
-
-    }
-    
 }
 
 .maincontainer{
     display: flex;
     align-items: center;
-    flex-direction: column;
-    height: 100%; 
+    flex-direction: column; 
+    min-height: 100%;
+    width: 100%;
     @include b.x-large{
-        width: 1920px;
-        
+        max-width: 1920px;
+        margin-left: auto ; 
+        margin-right: auto; 
     }
 
     .home{
         display: flex;
-        width: 100%;
         background-color: a.$elementNightColor;
         color: white;
+        width: 100%;
+        height: 150vw;
+        margin: 80px 0 0 0;
         @include b.x-large{
         height: 850px; 
-        margin-top:75px;
+        width: 90%;
+        margin: 150px 0 50px 0;
+        position: relative;
+        scroll-margin-top: 150px;
+        }
+
+        &:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: a.$bgGlowColor;
+        z-index: -1; 
+        filter: blur(40px);
+        display: none;
+        @include b.x-large{
+            display: block;
+        }
+        
         }
 
         &__image{
             
-            background-image: url(https://cdn-icons-png.flaticon.com/512/59/59836.png);
-            background-size: 100% 100%;
-            background-color: white;
+            background-image: a.$homeImg;
             box-sizing: border-box;
+            height: 80vw;
+            width: 50vw;
+           background-size: cover;
+           background-position: 50%; 
+           filter: drop-shadow(0 0 50px rgb(87, 30, 243));
             @include b.x-large{
             height: 100%;
             width: 600px;
@@ -59,8 +76,259 @@ body{
             display: flex;
             flex-direction: column;
             word-wrap: break-word;
+            position: absolute;
+            
+            
+            @include b.x-large{
             padding: 0 100px 0 50px; 
-            width: calc(100% - 600px);
+            width: calc(100% - 700px);
+            position: unset;   
+            }
+
+            
+
+            h2{
+            font-size: 12vw;
+            margin-left: 51vw;
+            height: 60vw;
+            @include b.x-large{
+                font-size: 50px;
+               margin-left: revert;
+               height: revert;
+               
+            }
+            
+        }
+            span{
+            font-size: 6vw;
+            padding-top: 0vw;
+            padding-right: 7vw;
+            padding-left:  5vw;
+            background-color: a.$elementNightColor;
+            @include b.x-large{
+                font-size: 25px;
+                padding-top: revert;
+                padding-right: revert;
+                padding-left:  revert;
+            }
+            
+        }
+
+        
+        }
+
+        
+        
+    }
+
+    .about{
+        display: flex;
+        background-color: a.$elementNightColor;
+        color: white;
+        height: 150vw;
+        width: 100%;
+        flex-direction: column;
+        @include b.x-large{
+        height: 850px; 
+        width: 90%;
+        margin: 100px 0 50px 0;
+        position: relative;
+        scroll-margin-top: 100px;
+        flex-direction: revert;
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: a.$bgGlowColor;
+            z-index: -1;
+            filter: blur(40px);
+            }
+
+        &__text{
+
+            display: flex;
+            flex-direction: column;
+            word-wrap: break-word;
+            flex: 1; 
+            @include b.x-large{
+            padding: 0 100px 0 50px; 
+            width: calc(100% - 700px);
+            flex: revert;   
+            }
+
+
+            
+
+            h2{
+                font-size: 10vw;
+                text-align: center;
+                @include b.x-large{
+                    font-size: 50px;
+                   margin-left: revert;
+                   height: revert;
+                   text-align: revert;
+                   
+                }
+                
+            }
+                span{
+                font-size: 6vw;
+                padding-right: 7vw;
+                padding-left:  10vw;
+                @include b.x-large{
+                    font-size: 25px;
+                    padding-top: revert;
+                    padding-right: revert;
+                    padding-left:  revert;
+                    flex: revert;
+                }
+                
+            }
+
+
+        }
+
+        &__image{
+            background-image: url(https://cdn-icons-png.flaticon.com/512/59/59836.png);
+            background-size: 100% 100%;
+            background-color: white;
+            box-sizing: border-box;
+            height: 50vw;
+            width: 100%;
+            @include b.x-large{
+            height: 100%;
+            width: 600px;
+            flex: revert;
+            }   }
+        
+    }
+
+    .plans{
+        display: flex;
+        flex-direction: column;
+        background-color: a.$elementNightColor;
+        color: white;
+        height: 150vw;
+        width: 100%;
+        @include b.x-large{
+        height: 850px; 
+        width: 90%;
+        margin: 100px 0 50px 0;
+        position: relative;
+        scroll-margin-top: 100px;
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: a.$bgGlowColor;
+            z-index: -1;    
+            filter: blur(40px);
+            }
+
+        &__text{
+
+            display: flex;
+            flex-direction: column;
+            word-wrap: break-word;
+            
+            flex: 1;
+            @include b.x-large{
+             padding: 0 100px 0 50px; 
+             width: calc(100% - 700px);   
+            }
+
+            
+
+            h2{
+                font-size: 10vw;
+                text-align: center;
+                @include b.x-large{
+                 text-align: revert;
+                 font-size: 50px;   
+                }
+            
+        }
+        span{
+            font-size: 6vw;
+            padding-top: 0vw;
+            width: 50vw;
+            padding-right: 7vw;
+            padding-left:  5vw;
+            @include b.x-large{
+                font-size: 25px;
+                padding-top: revert;
+                padding-right: revert;
+                padding-left:  revert;
+            }
+            
+        }
+
+
+        }
+
+        &__image{
+            background-image: url(https://cdn-icons-png.flaticon.com/512/59/59836.png);
+            background-size: 100% 100%;
+            background-color: white;
+            box-sizing: border-box;
+            height: 115vw;
+            width: 45vw;
+            margin-top: 35vw;
+            right: 0;
+            position: absolute;
+            @include b.x-large{
+            height: 350px;
+            width: 100%;
+            position: revert;
+            margin-top: revert;
+            right: revert;
+            }   }
+        
+    }
+
+    .know{
+        display: flex;
+        flex-direction: column;
+        background-color: a.$elementNightColor;
+        color: white;
+        width: 100%;
+      //  height: 50vw;
+        @include b.x-large{
+        //height: 1200px; 
+        width: 90%;
+        margin: 100px 0 50px 0;
+        position: relative;
+        scroll-margin-top: 100px;
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: a.$bgGlowColor;
+            z-index: -1;
+            filter: blur(40px);
+            }
+
+        &__text{
+
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            word-wrap: break-word;
+            @include b.x-large{
+             padding: 0px 100px 0 100px; 
+             flex: 1;   
+            }
+            
 
             
 
@@ -72,10 +340,83 @@ body{
             
         }
 
-        
+
         }
 
-        
+        &__container{
+           
+            box-sizing: border-box;
+            @include b.x-large{
+            height: 800px;
+            width: 100%;
+            padding: 50px 350px 100px 350px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 100px;
+            row-gap: 0px;
+            
+            
+            }  
+            
+            &__icons{
+                @include b.x-large{
+                   // border: 1px solid black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    font-size: 25px;
+                    height: 240px;
+                    width: 200px;
+                    background-size: contain;
+                    background-repeat: no-repeat;  
+                }
+                
+            }
+            
+            #htmlImg{
+                background-image: a.$htmlImg;
+            }
+
+            #cssImg{
+                background-image: a.$cssImg;
+            }
+
+            #jsImg{
+                background-image: a.$jsImg;
+                background-size: contain;
+            }
+
+            #phpImg{
+                align-items: center;
+                flex-direction: column;
+                filter: invert(.5);
+                white-space:nowrap;
+                padding-top: 25px;
+                gap: 50px;
+                
+
+            }
+
+            #mySQL{
+                background-color: white;
+                border-radius: 25%;
+                filter: grayscale(1);
+                flex-direction: column;
+                padding-top: unset;
+                align-items: unset;
+                height: 200px;
+                position: relative;
+            }
+
+            .iconText{
+                height: 20px;
+                white-space: nowrap;
+                position: absolute;
+                color: gray;
+                top: 210px
+            }
+        }
         
     }
 
@@ -89,44 +430,87 @@ body{
             height: 100%;
             width: 100%;
             display: flex;
-           background: a.$customColor;
+           background: a.$hrefBtnColor;
+           background-color: black;
            align-items: center;
            justify-content: center;
+           box-shadow: inset 0 0 35px white;
+           overflow:hidden; 
+           scroll-margin-top: 100px;
+
+           &:hover > .arrow{
+            animation: arrow infinite 1s;
+        }
+            &:hover{
+                box-shadow: inset 0 0 60px white;
+            }
+
+            &.bottom{
+
+                background: a.$hrefBtnColorBottom;
+                
+                
+
+                .arrow{
+                    transform: rotate(180deg);
+                    margin-right: 60px;
+                    
+                    @keyframes bottomarrow {
+                0% {
+                    transform:translateY(150px) rotate(180deg);
+                  }
+                  100% {
+                    transform:translateY(-150px) rotate(180deg);
+                  }
+            }
+                }
+                
+                
+                &:hover > .arrow {
+                    animation: bottomarrow infinite 1s;
+
+                }
+                
+            }
+            
 
           .arrow{
 
             width: 150px;
             height: 150px;
-            
-            div:nth-child(1){
-            @include b.x-large{
-                transform: translate(10px, 50px) rotate(90deg);
+            opacity: .5;
+         
+
+            @keyframes arrow {
+                0% {
+                    transform:translateY(-150px);
+                  }
+                  100% {
+                    transform:translateY(150px);
+                  }
             }
+            
+            div:nth-child(1){ 
+                transform: translate(10px, 50px) rotate(90deg);
         }
     
         div:nth-child(2){
-            @include b.x-large{
-                transform: translate(40px, 60px) rotate(-45deg);
-            }
+                transform: translate(40px, 60px) rotate(-45deg); 
         }
     
         div:nth-child(3){
-            @include b.x-large{
-                transform: translate(-20px, 40px) rotate(45deg);
-            }
+                transform: translate(-20px, 40px) rotate(45deg); 
             
         }
 
         div{
-            @include b.x-large{
             height: 20px;
             width: 100px;
             background-color: white;
             border-radius: 20px;  
-            }
-            
             transition: 300ms ease;
         }
+
             
           }
 
