@@ -33,6 +33,7 @@ body{
         width: 100%;
         height: 150vw;
         margin: 80px 0 0 0;
+        scroll-margin-top: 15vw;
         @include b.x-large{
         height: 850px; 
         width: 90%;
@@ -64,6 +65,7 @@ body{
             width: 50vw;
            background-size: cover;
            background-position: 50%; 
+           z-index: 2;
            filter: drop-shadow(0 0 50px rgb(87, 30, 243));
             @include b.x-large{
             height: 100%;
@@ -101,15 +103,17 @@ body{
         }
             span{
             font-size: 6vw;
-            padding-top: 0vw;
+            padding-top: 3vw;
             padding-right: 7vw;
             padding-left:  5vw;
             background-color: a.$elementNightColor;
+            z-index: 2;
             @include b.x-large{
                 font-size: 25px;
                 padding-top: revert;
                 padding-right: revert;
                 padding-left:  revert;
+                z-index: revert;
             }
             
         }
@@ -128,6 +132,7 @@ body{
         height: 150vw;
         width: 100%;
         flex-direction: column;
+        scroll-margin-top: 15vw;
         @include b.x-large{
         height: 850px; 
         width: 90%;
@@ -145,6 +150,10 @@ body{
             background: a.$bgGlowColor;
             z-index: -1;
             filter: blur(40px);
+            display: none;
+        @include b.x-large{
+            display: block;
+        }
             }
 
         &__text{
@@ -166,7 +175,7 @@ body{
                 font-size: 10vw;
                 text-align: center;
                 @include b.x-large{
-                    font-size: 50px;
+                   font-size: 50px;
                    margin-left: revert;
                    height: revert;
                    text-align: revert;
@@ -192,13 +201,15 @@ body{
         }
 
         &__image{
-            background-image: url(https://cdn-icons-png.flaticon.com/512/59/59836.png);
-            background-size: 100% 100%;
+            background-image: url("./../assets/images/aboutMobile.jpg");
+            background-size: cover;
             background-color: white;
             box-sizing: border-box;
+            background-position-y: 50%;
             height: 50vw;
             width: 100%;
             @include b.x-large{
+            background-image: url("./../assets/images/about.jpg");
             height: 100%;
             width: 600px;
             flex: revert;
@@ -211,8 +222,9 @@ body{
         flex-direction: column;
         background-color: a.$elementNightColor;
         color: white;
-        height: 150vw;
+        height: 300vw;
         width: 100%;
+        scroll-margin-top: 15vw;
         @include b.x-large{
         height: 850px; 
         width: 90%;
@@ -229,8 +241,11 @@ body{
             background: a.$bgGlowColor;
             z-index: -1;    
             filter: blur(40px);
-            }
-
+            display: none;
+        @include b.x-large{
+            display: block;
+        }
+ }
         &__text{
 
             display: flex;
@@ -257,11 +272,12 @@ body{
         span{
             font-size: 6vw;
             padding-top: 0vw;
-            width: 50vw;
-            padding-right: 7vw;
+            width: 80%;
+            padding-right: 10vw;
             padding-left:  5vw;
             @include b.x-large{
                 font-size: 25px;
+                width: revert;
                 padding-top: revert;
                 padding-right: revert;
                 padding-left:  revert;
@@ -273,17 +289,19 @@ body{
         }
 
         &__image{
-            background-image: url(https://cdn-icons-png.flaticon.com/512/59/59836.png);
-            background-size: 100% 100%;
+            background-image: url("./../assets/images/plan.jpg");
+            background-size: cover;
+            background-position-y: 50%;
             background-color: white;
             box-sizing: border-box;
             height: 115vw;
-            width: 45vw;
-            margin-top: 35vw;
+            width: 100%;
+            margin-top: 20vw;
             right: 0;
-            position: absolute;
+           
+           
             @include b.x-large{
-            height: 350px;
+            height: 400px;
             width: 100%;
             position: revert;
             margin-top: revert;
@@ -298,10 +316,12 @@ body{
         background-color: a.$elementNightColor;
         color: white;
         width: 100%;
-      //  height: 50vw;
+        height: 300vw;
+        scroll-margin-top: 15vw;
         @include b.x-large{
         //height: 1200px; 
         width: 90%;
+        height: revert;
         margin: 100px 0 50px 0;
         position: relative;
         scroll-margin-top: 100px;
@@ -315,7 +335,11 @@ body{
             background: a.$bgGlowColor;
             z-index: -1;
             filter: blur(40px);
-            }
+            display: none;
+        @include b.x-large{
+            display: block;
+        }
+    }
 
         &__text{
 
@@ -333,43 +357,60 @@ body{
             
 
             h2{
-            font-size: 50px;
-        }
-            span{
-            font-size: 25px;
+                font-size: 10vw;
+                text-align: center;
+                @include b.x-large{
+                 text-align: revert;
+                 font-size: 50px;   
+                }
             
         }
+           
 
 
         }
 
         &__container{
-           
+            display: flex;
+            flex-direction: row;
             box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            height: 230vw;
+            flex-wrap: wrap;
+            row-gap: 0;
             @include b.x-large{
             height: 800px;
             width: 100%;
             padding: 50px 350px 100px 350px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            column-gap: 100px;
+            flex-direction: revert;
+            column-gap: 0vw;
             row-gap: 0px;
+            @media screen and (min-width: 1280px){
+                column-gap: 4vw;
+            }
             
             
             }  
             
             &__icons{
+
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                background-size: contain;
+                background-repeat: no-repeat; 
+                height: 50vw;
+                width: 40vw;
+                font-size: 5vw;
+              //  border: 1px solid white;
+                background-position-x: 50%;
                 @include b.x-large{
-                   // border: 1px solid black;
-                    display: flex;
-                    justify-content: center;
-                    align-items: flex-end;
+                   align-items: flex-end;
                     font-size: 25px;
                     height: 240px;
                     width: 200px;
-                    background-size: contain;
-                    background-repeat: no-repeat;  
+                     
                 }
                 
             }
@@ -385,6 +426,7 @@ body{
             #jsImg{
                 background-image: a.$jsImg;
                 background-size: contain;
+                
             }
 
             #phpImg{
@@ -405,16 +447,29 @@ body{
                 flex-direction: column;
                 padding-top: unset;
                 align-items: unset;
-                height: 200px;
+                height: 40vw;
                 position: relative;
+                @include b.x-large{
+                    height: 200px;
+                }
             }
 
             .iconText{
-                height: 20px;
+
                 white-space: nowrap;
                 position: absolute;
                 color: gray;
-                top: 210px
+                height: 5vw;
+                top: 41vw;
+                align-self: center;
+
+                @include b.x-large{
+                 height: 20px;
+                 top: 210px;   
+                }
+                
+                
+                
             }
         }
         
@@ -422,6 +477,7 @@ body{
 
     .hrefBtnContainer{
         width: 100%;
+        overflow:revert; 
         @include b.x-large{
             height: 150px;
         }
@@ -438,12 +494,23 @@ body{
            overflow:hidden; 
            scroll-margin-top: 100px;
 
-           &:hover > .arrow{
+           &:active > .arrow{
+            animation: arrow infinite 1s;
+        }
+            &:active{
+                box-shadow: inset 0 0 60px white;
+            }
+
+           @include b.x-large{
+            &:hover > .arrow{
             animation: arrow infinite 1s;
         }
             &:hover{
                 box-shadow: inset 0 0 60px white;
             }
+           }
+
+           
 
             &.bottom{
 
@@ -453,7 +520,11 @@ body{
 
                 .arrow{
                     transform: rotate(180deg);
-                    margin-right: 60px;
+                    @include b.x-large{
+                      margin-right: 60px;  
+                    }
+                   
+
                     
                     @keyframes bottomarrow {
                 0% {
@@ -479,6 +550,9 @@ body{
             width: 150px;
             height: 150px;
             opacity: .5;
+            @include b.x-large{
+                margin-right: 60px;  
+              }
          
 
             @keyframes arrow {
@@ -491,15 +565,15 @@ body{
             }
             
             div:nth-child(1){ 
-                transform: translate(10px, 50px) rotate(90deg);
+                transform: translate(20px, 50px) rotate(90deg); 
         }
     
         div:nth-child(2){
-                transform: translate(40px, 60px) rotate(-45deg); 
+                transform: translate(50px, 60px) rotate(-45deg); 
         }
     
         div:nth-child(3){
-                transform: translate(-20px, 40px) rotate(45deg); 
+                transform: translate(-10px, 40px) rotate(45deg); 
             
         }
 
